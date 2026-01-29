@@ -14,11 +14,41 @@ export function ContactSection({ data = contactData }: ContactSectionProps) {
     email: '',
     message: '',
   })
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'err'>('idle')
 
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log('Form submitted:', formData)
+    setStatus('submitting')
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: data.contactFormKey,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `Nuevo mensaje de ${formData.name} desde tu Portafolio`,
+        }),
+      })
+
+      const result = await response.json()
+      if (result.success) {
+        setStatus('success')
+        setFormData({ name: '', email: '', message: '' })
+        setTimeout(() => setStatus('idle'), 5000)
+      } else {
+        setStatus('err')
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setStatus('err')
+    }
   }
 
   return (
@@ -132,11 +162,23 @@ export function ContactSection({ data = contactData }: ContactSectionProps) {
 
         <button
           type="submit"
-          className="flex items-center justify-center gap-2 w-full md:w-auto px-6 md:px-8 py-3 md:py-3.5 bg-accent text-accent-foreground rounded-xl font-medium hover:shadow-lg hover:shadow-accent/20 hover:-translate-y-0.5 transition-all text-sm md:text-base"
+          disabled={status === 'submitting'}
+          className="flex items-center justify-center gap-2 w-full md:w-auto px-6 md:px-8 py-3 md:py-3.5 bg-accent text-accent-foreground rounded-xl font-medium hover:shadow-lg hover:shadow-accent/20 hover:-translate-y-0.5 transition-all text-sm md:text-base disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
         >
-          <Send className="w-4 h-4" />
-          Enviar Mensaje
+          <Send className={`w-4 h-4 ${status === 'submitting' ? 'animate-pulse' : ''}`} />
+          {status === 'submitting' ? 'Enviando...' : 'Enviar Mensaje'}
         </button>
+
+        {status === 'success' && (
+          <p className="text-green-500 text-sm font-medium animate-in fade-in slide-in-from-top-2">
+            ¡Mensaje enviado con éxito! Me pondré en contacto pronto.
+          </p>
+        )}
+        {status === 'err' && (
+          <p className="text-red-500 text-sm font-medium animate-in fade-in slide-in-from-top-2">
+            Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.
+          </p>
+        )}
       </form>
     </div>
   )

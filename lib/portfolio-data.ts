@@ -6,12 +6,15 @@ export const profileData = {
   phone: '+54 3465 431858',
   birthday: 'Apr 24, 1998',
   location: 'Firmat, Santa Fe, Argentina',
+  cvUrl: '/img/CV GASTÓN FERRARI.pdf',
 }
 
 export const aboutData = {
   description: [
-    "Técnico Superior en Desarrollo de Software con experiencia docente y sólida formación en programación, desarrollo web y aplicaciones de escritorio. Especialista en delitos informáticos y educación digital, con un enfoque pedagógico aplicado a la formación de estudiantes y profesionales técnicos.",
-    "Capaz de liderar proyectos educativos y tecnológicos, con conocimientos en seguridad informática, desarrollo de software y soporte técnico integral.",
+    "Técnico Superior en Desarrollo de Software con trayectoria en docencia técnica y desarrollo de software con formación especializada en delitos informáticos y educación digital.",
+    "Desempeño en enseñanza de programación, sistemas, redes y tecnologías de la información en nivel medio, técnico y superior. Conocimientos en desarrollo Full Stack, bases de datos, soporte técnico y administración de entornos informáticos.",
+
+
   ],
   services: [
     {
@@ -90,6 +93,7 @@ export const resumeData = {
     { name: 'JavaScript / React', level: 85 },
     { name: 'TypeScript / Next.js', level: 85 },
     { name: 'Node.js / Express', level: 85 },
+    { name: 'git', level: 80 },
     { name: 'Python', level: 80 },
     { name: 'C# / .NET', level: 75 },
     { name: 'Seguridad Informática', level: 70 },
@@ -123,9 +127,10 @@ export const portfolioData = {
 
 export const contactData = {
   email: 'gastonferrari98@gmail.com',
-  phone: '+54 3465 431858',
+  phone: '+54 9 3465 431858',
   location: 'Firmat, Santa Fe, Argentina',
   mapEmbedUrl:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13346.035868832966!2d-61.49390255!3d-33.2562489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95c76ca0f7690f7b%3A0xf603957014605963!2sFirmat%2C%20Santa%20Fe!5e0!3m2!1sen!2sar!4v1700000000000!5m2!1sen!2sar',
+  contactFormKey: '99a1e057-27cc-4213-9cb1-b93827f768e8',
 }
 

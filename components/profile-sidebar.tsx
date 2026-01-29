@@ -1,4 +1,4 @@
-import { Mail, Phone, Calendar, MapPin } from 'lucide-react'
+import { Mail, Phone, Calendar, MapPin, Download } from 'lucide-react'
 
 import { profileData } from '@/lib/portfolio-data'
 
@@ -83,7 +83,19 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
           </div>
         </div>
       </div>
-
+      {/* Download CV Button */}
+      {data.cvUrl && (
+        <div className="mt-6 pt-6 border-t border-border">
+          <a
+            href={data.cvUrl}
+            download
+            className="w-full flex items-center justify-center gap-2 py-3 px-6 bg-accent text-accent-foreground font-semibold rounded-xl hover:bg-accent/90 transition-all shadow-lg shadow-accent/20 active:scale-[0.98]"
+          >
+            <Download className="w-5 h-5" />
+            <span>Descargar CV</span>
+          </a>
+        </div>
+      )}
     </aside>
   )
 }
