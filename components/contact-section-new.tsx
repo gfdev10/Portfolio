@@ -54,7 +54,7 @@ export function ContactSection({ data = contactData }: ContactSectionProps) {
   return (
     <div className="space-y-6 md:space-y-8">
       <div>
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Contact</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Contacto</h2>
         <div className="w-10 h-1 bg-accent rounded-full mb-6" />
       </div>
 
