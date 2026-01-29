@@ -1,5 +1,5 @@
 import { Mail, Phone, Calendar, MapPin } from 'lucide-react'
-import { Github, Twitter, Instagram } from 'lucide-react'
+
 import { profileData } from '@/lib/portfolio-data'
 
 interface ProfileSidebarProps {
@@ -84,36 +84,6 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
         </div>
       </div>
 
-      {/* Social Links */}
-      <div className="flex items-center justify-center gap-4 mt-4 md:mt-6 pt-4 md:pt-6 border-t border-border">
-        <a
-          href={data.social.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-10 h-10 rounded-lg bg-secondary hover:bg-accent hover:text-accent-foreground transition-colors flex items-center justify-center"
-          aria-label="GitHub"
-        >
-          <Github className="w-5 h-5" />
-        </a>
-        <a
-          href={data.social.twitter}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-10 h-10 rounded-lg bg-secondary hover:bg-accent hover:text-accent-foreground transition-colors flex items-center justify-center"
-          aria-label="Twitter"
-        >
-          <Twitter className="w-5 h-5" />
-        </a>
-        <a
-          href={data.social.instagram}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-10 h-10 rounded-lg bg-secondary hover:bg-accent hover:text-accent-foreground transition-colors flex items-center justify-center"
-          aria-label="Instagram"
-        >
-          <Instagram className="w-5 h-5" />
-        </a>
-      </div>
     </aside>
   )
 }

@@ -6,11 +6,6 @@ export const profileData = {
   phone: '+54 3465 431858',
   birthday: 'Apr 24, 1998',
   location: 'Firmat, Santa Fe, Argentina',
-  social: {
-    github: 'https://github.com/',
-    twitter: 'https://twitter.com/',
-    instagram: 'https://www.instagram.com/gastonferrari98',
-  },
 }
 
 export const aboutData = {
