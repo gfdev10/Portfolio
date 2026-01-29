@@ -93,7 +93,6 @@ export const resumeData = {
     { name: 'Python', level: 80 },
     { name: 'C# / .NET', level: 75 },
     { name: 'Seguridad Informática', level: 70 },
-    { name: 'Angular', level: 70 },
   ],
 }
 
