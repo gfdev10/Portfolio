@@ -11,7 +11,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: 'Portafolio - Gaston Ferrari',
-  description: 'Portafolio profesional de Gastón Ferrari, Desarrollador Full-Stack y Docente Técnico.',
+  description: 'Portafolio profesional de Gastón Ferrari, Programador Full Stack y docente nivel medio, técnico y superior con orientación en informática.',
   generator: 'v0.app',
   icons: {
     icon: '/img/portafolio.ico',

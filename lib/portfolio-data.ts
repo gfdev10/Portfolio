@@ -1,6 +1,6 @@
 export const profileData = {
   name: 'Gastón Ferrari',
-  title: 'Programador Full Stack y docente nivel medio, técnico y superior',
+  title: 'Programador Full Stack y docente nivel medio, técnico y superior con orientación en informática',
   avatar: '/img/perfil.jpg',
   email: 'gastonferrari98@gmail.com',
   phone: '+54 3465 431858',
