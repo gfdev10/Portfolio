@@ -121,6 +121,15 @@ export const portfolioData = {
       liveUrl: '#',
       githubUrl: '#',
     },
+    {
+      title: 'Luxury Salon',
+      category: 'design',
+      image: '/img/Luxurysalon.png',
+      description: 'Plataforma web para gestión de servicios de belleza.',
+      tech: ['React', 'Next.js', 'Tailwind'],
+      liveUrl: 'https://luxury-salon.vercel.app/',
+      githubUrl: '#',
+    },
   ],
 }
 
