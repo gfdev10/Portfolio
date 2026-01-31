@@ -4,8 +4,8 @@ export const profileData = {
   avatar: '/img/perfil.jpg',
   email: 'gastonferrari98@gmail.com',
   phone: '+54 3465 431858',
-  birthday: 'Apr 24, 1998',
   location: 'Firmat, Santa Fe, Argentina',
+  linkedin: 'https://www.linkedin.com/in/gaston-ferrari-b01119192/',
   cvUrl: '/img/CV GASTÓN FERRARI.pdf',
 }
 

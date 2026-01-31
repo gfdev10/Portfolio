@@ -1,4 +1,4 @@
-import { Mail, Phone, Calendar, MapPin, Download } from 'lucide-react'
+import { Mail, Phone, MapPin, Download, Linkedin } from 'lucide-react'
 
 import { profileData } from '@/lib/portfolio-data'
 
@@ -65,16 +65,6 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
 
         <div className="flex items-start gap-3">
           <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
-            <Calendar className="w-5 h-5 text-accent" />
-          </div>
-          <div className="flex-1">
-            <p className="text-xs text-muted-foreground uppercase mb-1">Cumpleaños</p>
-            <p className="text-sm text-foreground">{data.birthday}</p>
-          </div>
-        </div>
-
-        <div className="flex items-start gap-3">
-          <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
             <MapPin className="w-5 h-5 text-accent" />
           </div>
           <div className="flex-1">
@@ -82,7 +72,27 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
             <p className="text-sm text-foreground">{data.location}</p>
           </div>
         </div>
+
+        {data.linkedin && (
+          <div className="flex items-start gap-3">
+            <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
+              <Linkedin className="w-5 h-5 text-accent" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-xs text-muted-foreground uppercase mb-1">LinkedIn</p>
+              <a
+                href={data.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-foreground hover:text-accent transition-colors truncate block"
+              >
+                Perfil Profesional
+              </a>
+            </div>
+          </div>
+        )}
       </div>
+
       {/* Download CV Button */}
       {data.cvUrl && (
         <div className="mt-6 pt-6 border-t border-border">
