@@ -19,7 +19,7 @@ export const aboutData = {
   services: [
     {
       icon: 'Code',
-      title: 'Desarrollo de Software',
+      title: 'Desarrollo de Software a medida',
       description: 'Desarrollo de aplicaciones web y de escritorio escalables utilizando tecnologías modernas como React, Next.js, Node.js y SQL.',
     },
     {
