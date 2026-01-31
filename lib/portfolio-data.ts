@@ -1,6 +1,6 @@
 export const profileData = {
   name: 'Gastón Ferrari',
-  title: 'Full Stack Developer & Technical Educator',
+  title: 'Programador Full Stack y docente nivel medio, técnico y superior',
   avatar: '/img/perfil.jpg',
   email: 'gastonferrari98@gmail.com',
   phone: '+54 3465 431858',
@@ -25,7 +25,7 @@ export const aboutData = {
     {
       icon: 'Zap',
       title: 'Docente',
-      description: 'Docente de programacion y demas materias orientadas a informatica.',
+      description: 'Docente de nivel medio, técnico y superior con orientación informática.',
     },
 
   ],
@@ -57,7 +57,7 @@ export const resumeData = {
   ],
   experience: [
     {
-      title: 'Full Stack Developer',
+      title: 'Programador Full Stack',
       period: '2024 — Presente',
       description:
         'Desarrollo de aplicaciones web y de escritorio escalables utilizando tecnologías modernas como React, Next.js, Node.js y SQL.',
