@@ -57,10 +57,22 @@ export const resumeData = {
   ],
   experience: [
     {
-      title: 'Programador Full Stack',
-      period: '2024 — Presente',
+      title: 'Programador Full Stack - Don Santiago',
+      period: '2024 — 2025',
       description:
-        'Desarrollo de aplicaciones web y de escritorio escalables utilizando tecnologías modernas como React, Next.js, Node.js y SQL.',
+        'Desarrollo pagina web de gestión comercial para presupuestos, con administración de clientes, productos y proveedores, orientado a la digitalización y optimización de procesos.',
+    },
+    {
+      title: 'Programador Full Stack - Arbitra',
+      period: '2025 — 2025',
+      description:
+        'Plataforma web de arbitraje financiero con evaluación de oportunidades y decisiones basadas en datos.',
+    },
+    {
+      title: 'Programador Full Stack - Luxury Salon',
+      period: '2025 — 2026',
+      description:
+        'Desarrollo de sitio web para salón de estética premium, con diseño UI/UX, frontend responsive optimizado en estética y rendimiento, despliegue en la nube y enfoque en presencia digital, branding y captación de clientes.',
     },
     {
       title: 'Docente en E.E.T.P. N.º 281',
