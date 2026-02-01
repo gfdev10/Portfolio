@@ -58,7 +58,7 @@ export const resumeData = {
   experience: [
     {
       title: 'Programador Full Stack - Don Santiago',
-      period: '2024 — 2025',
+      period: '2024 — 2024',
       description:
         'Desarrollo pagina web de gestión comercial para presupuestos, con administración de clientes, productos y proveedores, orientado a la digitalización y optimización de procesos.',
     },
