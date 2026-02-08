@@ -142,6 +142,15 @@ export const portfolioData = {
       liveUrl: 'https://luxury-salon.vercel.app/',
       githubUrl: '#',
     },
+    {
+      title: 'PeluTurno',
+      category: 'web app',
+      image: '/img/PeluTurno.png',
+      description: 'Sistema de gestión de turnos para peluquerías.',
+      tech: ['React', 'Next.js', 'Vercel'],
+      liveUrl: 'https://peluturno.vercel.app/home',
+      githubUrl: '#',
+    },
   ],
 }
 
