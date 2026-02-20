@@ -6,6 +6,8 @@ export const profileData = {
   phone: '+54 3465 431858',
   location: 'Firmat, Santa Fe, Argentina',
   linkedin: 'https://www.linkedin.com/in/gaston-ferrari-b01119192/',
+  github: 'https://github.com/gfdev10',
+  cvOnline: 'https://docs.google.com/document/d/1lO7rLcj88Kb1wMecavcIu2f4TTSgARkNzi9YLVhzx7E/edit?usp=sharing',
   cvUrl: '/img/CV GASTÓN FERRARI.pdf',
 }
 
@@ -127,7 +129,7 @@ export const portfolioData = {
     {
       title: 'Presupuestos Don Santiago',
       category: 'web app',
-      image: '/img/donsantiago.png',
+      image: '/img/donsantiago.jpg',
       description: 'Budgeting management system for local business.',
       tech: ['Web', 'Database', 'Management'],
       liveUrl: '#',
@@ -149,6 +151,15 @@ export const portfolioData = {
       description: 'Sistema de gestión de turnos para peluquerías.',
       tech: ['React', 'Next.js', 'Vercel'],
       liveUrl: 'https://peluturno.vercel.app/home',
+      githubUrl: '#',
+    },
+    {
+      title: 'IA Optimizer Token',
+      category: 'web app',
+      image: '/img/IAOptimizerToken.png',
+      description: 'Optimization and token management platform.',
+      tech: ['React', 'Next.js', 'Web3'],
+      liveUrl: '#',
       githubUrl: '#',
     },
   ],

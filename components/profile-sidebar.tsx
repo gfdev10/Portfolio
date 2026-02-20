@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Download, Linkedin } from 'lucide-react'
+import { Mail, Phone, MapPin, Download, Linkedin, Github, FileText } from 'lucide-react'
 
 import { profileData } from '@/lib/portfolio-data'
 
@@ -91,21 +91,46 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
             </div>
           </div>
         )}
+
+        {(data as any).github && (
+          <div className="flex items-start gap-3">
+            <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
+              <Github className="w-5 h-5 text-accent" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-xs text-muted-foreground uppercase mb-1">GitHub</p>
+              <a
+                href={(data as any).github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-foreground hover:text-accent transition-colors truncate block"
+              >
+                gfdev10
+              </a>
+            </div>
+          </div>
+        )}
+
+        {(data as any).cvOnline && (
+          <div className="flex items-start gap-3">
+            <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
+              <FileText className="w-5 h-5 text-accent" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-xs text-muted-foreground uppercase mb-1">Curriculum Vitae</p>
+              <a
+                href={(data as any).cvOnline}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-foreground hover:text-accent transition-colors truncate block"
+              >
+                Ver online
+              </a>
+            </div>
+          </div>
+        )}
       </div>
 
-      {/* Download CV Button */}
-      {data.cvUrl && (
-        <div className="mt-6 pt-6 border-t border-border">
-          <a
-            href={data.cvUrl}
-            download
-            className="w-full flex items-center justify-center gap-2 py-3 px-6 bg-accent text-accent-foreground font-semibold rounded-xl hover:bg-accent/90 transition-all shadow-lg shadow-accent/20 active:scale-[0.98]"
-          >
-            <Download className="w-5 h-5" />
-            <span>Descargar CV</span>
-          </a>
-        </div>
-      )}
     </aside>
   )
 }
