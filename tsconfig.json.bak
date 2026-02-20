@@ -22,19 +22,9 @@
         "name": "next"
       }
     ],
-    "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./src/*"
-      ],
-      "@core/*": [
-        "./src/core/*"
-      ],
-      "@shared/*": [
-        "./src/shared/*"
-      ],
-      "@modules/*": [
-        "./src/modules/*"
+        "./*"
       ]
     }
   },
@@ -43,7 +33,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/.next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [

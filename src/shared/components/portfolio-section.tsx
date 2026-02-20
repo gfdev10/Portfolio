@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { ExternalLink, X, Eye } from 'lucide-react'
-import { portfolioData } from '@/lib/portfolio-data'
+import { portfolioData } from '@/shared/lib/portfolio-data'
 
 interface PortfolioSectionProps {
   data?: typeof portfolioData

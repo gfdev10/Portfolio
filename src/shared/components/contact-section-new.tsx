@@ -2,7 +2,7 @@
 
 import { Mail, Phone, MapPin, Send } from 'lucide-react'
 import { useState } from 'react'
-import { contactData } from '@/lib/portfolio-data'
+import { contactData } from '@/shared/lib/portfolio-data'
 
 interface ContactSectionProps {
   data?: typeof contactData

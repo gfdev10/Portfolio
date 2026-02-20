@@ -1,5 +1,5 @@
 import { BookOpen, Briefcase } from 'lucide-react'
-import { resumeData } from '@/lib/portfolio-data'
+import { resumeData } from '@/shared/lib/portfolio-data'
 
 interface ResumeSectionProps {
   data?: typeof resumeData

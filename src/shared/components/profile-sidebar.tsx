@@ -1,6 +1,5 @@
 import { Mail, Phone, MapPin, Download, Linkedin, Github, FileText } from 'lucide-react'
-
-import { profileData } from '@/lib/portfolio-data'
+import { profileData } from '@/shared/lib/portfolio-data'
 
 interface ProfileSidebarProps {
   data?: typeof profileData

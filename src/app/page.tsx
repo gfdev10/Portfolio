@@ -1,13 +1,13 @@
 'use client'
 
 import { useState } from 'react'
-import { ProfileSidebar } from '@/components/profile-sidebar'
-import { AboutSection } from '@/components/about-section'
-import { ResumeSection } from '@/components/resume-section'
-import { PortfolioSection } from '@/components/portfolio-section'
+import { ProfileSidebar } from '@/shared/components/profile-sidebar'
+import { AboutSection } from '@/shared/components/about-section'
+import { ResumeSection } from '@/shared/components/resume-section'
+import { PortfolioSection } from '@/shared/components/portfolio-section'
 
-import { ContactSection } from '@/components/contact-section-new'
-import { ThemeToggle } from '@/components/theme-toggle'
+import { ContactSection } from '@/shared/components/contact-section-new'
+import { ThemeToggle } from '@/shared/components/theme-toggle'
 import {
   profileData,
   aboutData,
@@ -15,7 +15,7 @@ import {
   portfolioData,
 
   contactData,
-} from '@/lib/portfolio-data'
+} from '@/shared/lib/portfolio-data'
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('about')

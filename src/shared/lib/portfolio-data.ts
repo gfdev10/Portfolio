@@ -13,8 +13,8 @@ export const profileData = {
 
 export const aboutData = {
   description: [
-    "Soy Técnico Superior en Desarrollo de Software con una sólida trayectoria que integra el desarrollo Full Stack con la docencia técnica. Mi enfoque se centra en la creación de soluciones escalables y eficientes, combinando conocimientos avanzados en tecnologías modernas como React, Next.js y Node.js con una especialización en delitos informáticos y seguridad digital.",
-    "Como docente en niveles medio, técnico y superior, tengo la capacidad de transmitir conceptos complejos de forma clara, liderando procesos de aprendizaje en programación, redes y sistemas. Mi objetivo es fusionar la innovación tecnológica con la formación académica para impulsar proyectos que generen un impacto real y positivo.",
+    "Técnico Superior en Desarrollo de Software con una trayectoria integral que vincula la innovación tecnológica y la educación técnica de alto impacto. Mi enfoque profesional se especializa en el desarrollo de soluciones Full Stack escalables y seguras, sustentadas en una sólida competencia técnica en arquitecturas modernas como React, Next.js y Node.js, complementada con una especialización estratégica en ciberseguridad y delitos informáticos.",
+    "Como docente en los niveles medio, técnico y superior, poseo una capacidad probada para transformar conceptos técnicos complejos en estrategias de aprendizaje efectivas, liderando la formación de nuevos profesionales en programación, redes y sistemas. Mi misión es converger la excelencia técnica con la formación académica para liderar proyectos tecnológicos que impulsen la transformación digital con propósito.",
   ],
   services: [
     {
@@ -174,6 +174,6 @@ export const contactData = {
   location: 'Firmat, Santa Fe, Argentina',
   mapEmbedUrl:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13346.035868832966!2d-61.49390255!3d-33.2562489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95c76ca0f7690f7b%3A0xf603957014605963!2sFirmat%2C%20Santa%20Fe!5e0!3m2!1sen!2sar!4v1700000000000!5m2!1sen!2sar',
-  contactFormKey: '99a1e057-27cc-4213-9cb1-b93827f768e8',
+  contactFormKey: process.env.NEXT_PUBLIC_CONTACT_FORM_KEY || '',
 }
 
