@@ -13,23 +13,25 @@ export const profileData = {
 
 export const aboutData = {
   description: [
-    "Técnico Superior en Desarrollo de Software con trayectoria en docencia técnica y desarrollo de software con formación especializada en delitos informáticos y educación digital.",
-    "Desempeño en enseñanza de programación, sistemas, redes y tecnologías de la información en nivel medio, técnico y superior. Conocimientos en desarrollo Full Stack, bases de datos, soporte técnico y administración de entornos informáticos.",
-
-
+    "Soy Técnico Superior en Desarrollo de Software con una sólida trayectoria que integra el desarrollo Full Stack con la docencia técnica. Mi enfoque se centra en la creación de soluciones escalables y eficientes, combinando conocimientos avanzados en tecnologías modernas como React, Next.js y Node.js con una especialización en delitos informáticos y seguridad digital.",
+    "Como docente en niveles medio, técnico y superior, tengo la capacidad de transmitir conceptos complejos de forma clara, liderando procesos de aprendizaje en programación, redes y sistemas. Mi objetivo es fusionar la innovación tecnológica con la formación académica para impulsar proyectos que generen un impacto real y positivo.",
   ],
   services: [
     {
       icon: 'Code',
       title: 'Desarrollo de Software a medida',
-      description: 'Desarrollo de aplicaciones web y de escritorio escalables utilizando tecnologías modernas como React, Next.js, Node.js y SQL.',
+      description: 'Creación de soluciones web y de escritorio robustas y escalables, utilizando un stack moderno (React, Next.js, Node.js) y arquitecturas de bases de datos optimizadas.',
+    },
+    {
+      icon: 'Smartphone',
+      title: 'Desarrollo de Aplicaciones Móviles',
+      description: 'Diseño y construcción de experiencias móviles intuitivas y de alto rendimiento, enfocadas en la usabilidad y la integración fluida con servicios en la nube.',
     },
     {
       icon: 'Zap',
-      title: 'Docente',
-      description: 'Docente de nivel medio, técnico y superior con orientación informática.',
+      title: 'Docencia Técnica Especializada',
+      description: 'Formación académica en niveles medio, técnico y superior, liderando el aprendizaje en áreas clave como programación, redes y seguridad informática.',
     },
-
   ],
 }
 
