@@ -1,15 +1,21 @@
-# Gastón Ferrari - Portfolio Profesional
+# 🚀 Gastón Ferrari - Portfolio Profesional
 
-Este repositorio contiene mi portfolio profesional, desarrollado con **Next.js 15**, **TypeScript** y **Tailwind CSS**. El proyecto esta estructurado siguiendo los principios de **Clean Architecture** para garantizar escalabilidad, mantenibilidad y una clara separación de responsabilidades.
+![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38B2AC?style=for-the-badge&logo=tailwind-css)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-black?style=for-the-badge&logo=framer)
 
-## 🚀 Tecnologías Principales
+Bienvenido al repositorio de mi portfolio profesional. Este proyecto ha sido desarrollado siguiendo principios de **Clean Architecture** para garantizar escalabilidad, mantenibilidad y una clara separación de responsabilidades, al mismo tiempo que ofrece un diseño moderno mediante el uso de Glassmorphism y animaciones fluidas.
+
+## 💻 Tecnologías Principales
 
 - **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
 - **Lenguaje**: [TypeScript](https://www.typescriptlang.org/)
-- **Estilos**: [Tailwind CSS](https://tailwindcss.com/)
+- **Estilos**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Animaciones**: [Framer Motion](https://www.framer.com/motion/)
 - **Iconografía**: [Lucide React](https://lucide.dev/)
 - **Componentes UI**: [Radix UI](https://www.radix-ui.com/)
-- **Formularios**: [Web3Forms](https://web3forms.com/)
+- **Formularios**: [Web3Forms](https://web3forms.com/) para el manejo de contactos.
 
 ## 🏗️ Arquitectura del Proyecto
 
@@ -17,21 +23,18 @@ El código se organiza siguiendo una estructura modular dentro de la carpeta `sr
 
 ```text
 src/
-├── app/            # Rutas y configuración de Next.js
-├── core/           # Entidades de dominio y lógica de negocio pura
-├── modules/        # Módulos específicos por funcionalidad (Feature-first)
-├── shared/         # Componentes, hooks y utilidades compartidas
-│   ├── components/ # Componentes de UI reutilizables
-│   ├── hooks/      # Hooks personalizados
-│   └── lib/        # Configuraciones y datos centralizados
-└── styles/         # Estilos globales y tokens de diseño
+├── app/            # Rutas, Layout principal y configuración de Next.js
+├── shared/         # Componentes y utilidades compartidas
+│   ├── components/ # Componentes de UI reutilizables (Hero, Secciones, Sidebar)
+│   ├── lib/        # Fuente centralizada de datos (portfolio-data.ts)
+└── styles/         # Estilos globales y tokens de diseño personalizados
 ```
 
-### Características Principales:
-- **Modularidad**: Componentes desacoplados y reutilizables.
+### ✨ Características Destacadas
+- **Diseño Moderno**: Implementación moderna con efectos *Glassmorphism* limpios y estéticos.
 - **Tipado Estricto**: Uso extensivo de TypeScript para prevenir errores en tiempo de desarrollo.
 - **Rendimiento**: Optimización avanzada mediante Server Components y carga diferida.
-- **SEO**: Optimizado para buscadores con metadatos dinámicos.
+- **SEO**: Meta etiquetas y arquitectura optimizada para buscadores.
 
 ## 🛠️ Configuración Local
 
@@ -47,15 +50,16 @@ src/
    ```
 
 3. **Configurar variables de entorno**:
-   Crea un archivo `.env.local` en la raíz basado en `.env.example`:
-   ```text
+   Crea un archivo `.env.local` en la raíz (puedes basarte en `.env.example` si existe) e incluye tus claves de servicio:
+   ```env
    NEXT_PUBLIC_CONTACT_FORM_KEY=tu_clave_de_web3forms
    ```
 
-4. **Ejecutar en desarrollo**:
+4. **Ejecutar servidor de desarrollo**:
    ```bash
    npm run dev
    ```
+   *Accede a [http://localhost:3000](http://localhost:3000) en tu navegador.*
 
 5. **Construir para producción**:
    ```bash
@@ -65,7 +69,7 @@ src/
 
 ## 📩 Contacto
 
-Si tienes alguna pregunta o propuesta, no dudes en contactarme a través del formulario en mi portfolio o vía LinkedIn.
+Si tienes alguna pregunta, propuesta de proyecto o interés profesional, no dudes en contactarme directamente a través de mi portfolio o vía [LinkedIn](https://www.linkedin.com/in/gaston-ferrari-b01119192/).
 
 ---
-Desarrollado por **Gastón Ferrari**.
+Desarrollado con pasión y excelencia por **Gastón Ferrari**.
