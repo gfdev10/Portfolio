@@ -1,3 +1,6 @@
+'use client'
+
+import { motion } from 'framer-motion'
 import { BookOpen, Briefcase } from 'lucide-react'
 import { resumeData } from '@/shared/lib/portfolio-data'
 
@@ -6,67 +9,93 @@ interface ResumeSectionProps {
 }
 
 export function ResumeSection({ data = resumeData }: ResumeSectionProps) {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  }
+
+  const item = {
+    hidden: { opacity: 0, x: -20 },
+    show: { opacity: 1, x: 0 }
+  }
+
   return (
-    <div className="space-y-8 md:space-y-10">
-      <div>
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Resumen</h2>
-        <div className="w-10 h-1 bg-accent rounded-full mb-6" />
-      </div>
+    <div className="space-y-12 md:space-y-16">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-4">Resumen</h2>
+        <div className="w-20 h-1.5 bg-primary rounded-full mb-10" />
+      </motion.div>
 
-      {/* Education */}
-      <div>
-        <div className="flex items-center gap-2 md:gap-3 mb-6">
-          <BookOpen className="w-5 h-5 md:w-6 md:h-6 text-accent" />
-          <h3 className="text-xl md:text-2xl font-bold text-foreground">Educacion</h3>
-        </div>
-        <div className="space-y-4">
-          {data.education.map((item, index) => (
-            <div key={index} className="relative pl-5 md:pl-6 pb-6 border-l-2 border-border last:pb-0">
-              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent" />
-              <h4 className="text-base md:text-lg font-semibold text-foreground mb-2">{item.title}</h4>
-              <p className="text-xs md:text-sm text-accent mb-2">{item.period}</p>
-              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16">
+        {/* Education */}
+        <div className="space-y-8">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+              <BookOpen className="w-6 h-6" />
             </div>
-          ))}
-        </div>
-      </div>
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground">Educación</h3>
+          </div>
 
-      {/* Experience */}
-      <div>
-        <div className="flex items-center gap-2 md:gap-3 mb-6">
-          <Briefcase className="w-5 h-5 md:w-6 md:h-6 text-accent" />
-          <h3 className="text-xl md:text-2xl font-bold text-foreground">Experiencia</h3>
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="space-y-8 border-l-2 border-border/50 ml-6 pl-8"
+          >
+            {data.education.map((edu, index) => (
+              <motion.div
+                key={index}
+                variants={item}
+                className="relative group"
+              >
+                <div className="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-background border-2 border-primary group-hover:bg-primary transition-colors" />
+                <h4 className="text-lg md:text-xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors">{edu.title}</h4>
+                <p className="text-sm font-bold text-primary/80 mb-3 tracking-wider">{edu.period}</p>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed italic">{edu.description}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
-        <div className="space-y-4">
-          {data.experience.map((item, index) => (
-            <div key={index} className="relative pl-5 md:pl-6 pb-6 border-l-2 border-border last:pb-0">
-              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent" />
-              <h4 className="text-base md:text-lg font-semibold text-foreground mb-2">{item.title}</h4>
-              <p className="text-xs md:text-sm text-accent mb-2">{item.period}</p>
-              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
 
-      {/* Skills */}
-      <div>
-        <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6">Habilidades</h3>
-        <div className="space-y-5 md:space-y-6">
-          {data.skills.map((skill, index) => (
-            <div key={index}>
-              <div className="flex justify-between mb-2">
-                <span className="text-xs md:text-sm font-medium text-foreground">{skill.name}</span>
-                <span className="text-xs md:text-sm text-muted-foreground">{skill.level}%</span>
-              </div>
-              <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-accent rounded-full transition-all duration-1000 ease-out"
-                  style={{ width: `${skill.level}%` }}
-                />
-              </div>
+        {/* Experience */}
+        <div className="space-y-8">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent">
+              <Briefcase className="w-6 h-6" />
             </div>
-          ))}
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground">Experiencia</h3>
+          </div>
+
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="space-y-8 border-l-2 border-border/50 ml-6 pl-8"
+          >
+            {data.experience.map((exp, index) => (
+              <motion.div
+                key={index}
+                variants={item}
+                className="relative group"
+              >
+                <div className="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-background border-2 border-accent group-hover:bg-accent transition-colors" />
+                <h4 className="text-lg md:text-xl font-bold text-foreground mb-1 group-hover:text-accent transition-colors">{exp.title}</h4>
+                <p className="text-sm font-bold text-accent/80 mb-3 tracking-wider">{exp.period}</p>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed italic">{exp.description}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </div>

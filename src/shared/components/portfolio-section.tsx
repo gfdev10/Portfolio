@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { ExternalLink, X, Eye } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { ExternalLink, X, Eye, Filter } from 'lucide-react'
 import { portfolioData } from '@/shared/lib/portfolio-data'
 
 interface PortfolioSectionProps {
@@ -10,87 +11,160 @@ interface PortfolioSectionProps {
 
 export function PortfolioSection({ data = portfolioData }: PortfolioSectionProps) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
+  const [activeCategory, setActiveCategory] = useState('todos')
+
+  const categories = ['todos', ...new Set(data.projects.map(p => p.category))]
+
+  const filteredProjects = activeCategory === 'todos'
+    ? data.projects
+    : data.projects.filter(p => p.category === activeCategory)
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  }
+
+  const item = {
+    hidden: { opacity: 0, scale: 0.95, y: 20 },
+    show: { opacity: 1, scale: 1, y: 0 }
+  }
 
   return (
-    <div className="space-y-6 md:space-y-8">
-      <div>
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Portafolio</h2>
-        <div className="w-10 h-1 bg-accent rounded-full mb-6" />
+    <div className="space-y-10">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-4">Portafolio</h2>
+        <div className="w-20 h-1.5 bg-primary rounded-full mb-10" />
+      </motion.div>
+
+      {/* Filter Bar */}
+      <div className="flex items-center gap-4 border-b border-border/50 pb-6 overflow-x-auto scrollbar-hide">
+        <Filter className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+        <div className="flex gap-2">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 ${activeCategory === cat
+                ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/20'
+                : 'bg-secondary text-muted-foreground hover:text-foreground'
+                }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-        {data.projects.map((project, index) => (
-          <div
-            key={index}
-            className="group relative bg-secondary rounded-xl md:rounded-2xl border border-border overflow-hidden hover:border-accent transition-all duration-300 hover:shadow-xl hover:shadow-accent/10"
-          >
-            <div className="aspect-[4/3] overflow-hidden bg-background">
-              <img
-                src={project.image || "/placeholder.svg"}
-                alt={project.title}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-            </div>
-
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/20 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 md:p-6">
-              <h3 className="text-lg md:text-xl font-bold text-foreground mb-4 transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-300">
-                {project.title}
-              </h3>
-
-              {/* Action Buttons */}
-              <div className="flex gap-2 md:gap-3 transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-300 delay-75">
-                <button
-                  onClick={() => setSelectedImage(project.image)}
-                  className="flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 bg-secondary border border-border text-foreground rounded-lg text-xs md:text-sm font-medium hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors"
-                >
-                  <Eye className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                  Visualizar
-                </button>
-                {project.liveUrl !== '#' && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 bg-accent text-accent-foreground rounded-lg text-xs md:text-sm font-medium hover:opacity-90 transition-opacity"
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10"
+      >
+        <AnimatePresence mode="popLayout">
+          {filteredProjects.map((project, index) => (
+            <motion.div
+              key={project.title}
+              layout
+              variants={item}
+              initial="hidden"
+              animate="show"
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="group relative glass-card p-4 hover:border-primary/30 transition-all duration-500 overflow-hidden"
+            >
+              <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-6">
+                <img
+                  src={project.image || "/placeholder.svg"}
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={() => setSelectedImage(project.image)}
+                    className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all shadow-2xl"
                   >
-                    <ExternalLink className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                    Visitar
-                  </a>
-                )}
+                    <Eye className="w-6 h-6" />
+                  </motion.button>
+                  {project.liveUrl !== '#' && (
+                    <motion.a
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white hover:bg-accent transition-all shadow-2xl"
+                    >
+                      <ExternalLink className="w-6 h-6" />
+                    </motion.a>
+                  )}
+                </div>
               </div>
-            </div>
 
-            {/* Category Badge - Always visible */}
-            <div className="absolute top-3 right-3 md:top-4 md:right-4 px-2.5 md:px-3 py-1 md:py-1.5 bg-background/90 backdrop-blur-sm border border-border rounded-lg text-xs font-medium text-accent capitalize">
-              {project.category}
-            </div>
-          </div>
-        ))}
-      </div>
+              <div className="space-y-4">
+                <div className="flex justify-between items-start">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary bg-primary/10 px-3 py-1 rounded-full">
+                    {project.category}
+                  </span>
+                </div>
+                <h3 className="text-xl md:text-2xl font-display font-black group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-sm md:text-base text-muted-foreground line-clamp-3 italic">
+                  {project.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </motion.div>
 
       {/* Lightbox Modal */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-background/95 backdrop-blur-md p-4 md:p-10 animate-in fade-in duration-300"
-          onClick={() => setSelectedImage(null)}
-        >
-          <button
-            className="absolute top-4 right-4 md:top-8 md:right-8 p-2 bg-secondary rounded-full border border-border hover:bg-accent hover:text-accent-foreground transition-colors z-10"
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-background/90 backdrop-blur-2xl p-4 md:p-10"
             onClick={() => setSelectedImage(null)}
           >
-            <X className="w-6 h-6" />
-          </button>
+            <motion.button
+              initial={{ scale: 0, rotate: -90 }}
+              animate={{ scale: 1, rotate: 0 }}
+              className="absolute top-6 right-6 p-3 bg-secondary rounded-full border border-border hover:bg-primary hover:text-white transition-all z-10 shadow-2xl"
+              onClick={() => setSelectedImage(null)}
+            >
+              <X className="w-6 h-6" />
+            </motion.button>
 
-          <div className="relative max-w-5xl w-full h-full flex items-center justify-center animate-in zoom-in-95 duration-300">
-            <img
-              src={selectedImage}
-              alt="Project Preview"
-              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+            <motion.div
+              initial={{ scale: 0.9, y: 20, opacity: 0 }}
+              animate={{ scale: 1, y: 0, opacity: 1 }}
+              exit={{ scale: 0.9, y: 20, opacity: 0 }}
+              transition={{ type: "spring", bounce: 0.3 }}
+              className="relative max-w-6xl w-full flex items-center justify-center"
               onClick={(e) => e.stopPropagation()}
-            />
-          </div>
-        </div>
-      )}
+            >
+              <img
+                src={selectedImage}
+                alt="Project Preview"
+                className="max-w-full max-h-[80vh] object-contain rounded-3xl shadow-[0_0_100px_rgba(0,0,0,0.5)] border border-white/5"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }

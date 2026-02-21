@@ -1,6 +1,6 @@
 # Gastón Ferrari - Portfolio Profesional
 
-Este repositorio contiene mi portfolio profesional, desarrollado con **Next.js 15**, **TypeScript** y **Tailwind CSS**. El proyecto ha sido reestructurado siguiendo principios de **Clean Architecture** para garantizar escalabilidad, mantenibilidad y una clara separación de responsabilidades.
+Este repositorio contiene mi portfolio profesional, desarrollado con **Next.js 15**, **TypeScript** y **Tailwind CSS**. El proyecto esta estructurado siguiendo los principios de **Clean Architecture** para garantizar escalabilidad, mantenibilidad y una clara separación de responsabilidades.
 
 ## 🚀 Tecnologías Principales
 
@@ -68,4 +68,4 @@ src/
 Si tienes alguna pregunta o propuesta, no dudes en contactarme a través del formulario en mi portfolio o vía LinkedIn.
 
 ---
-Desarrollado con ❤️ por **Gastón Ferrari**.
+Desarrollado por **Gastón Ferrari**.

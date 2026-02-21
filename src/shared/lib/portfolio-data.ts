@@ -1,6 +1,6 @@
 export const profileData = {
   name: 'Gastón Ferrari',
-  title: 'Programador Full Stack y docente nivel medio, técnico y superior con orientación en informática',
+  title: 'Tecnico Superior en Desarrollo de Software | Profesor de Secundaria y Universitario |Full Stack',
   avatar: '/img/perfil.jpg',
   email: 'gastonferrari98@gmail.com',
   phone: '+54 3465 431858',
@@ -11,29 +11,6 @@ export const profileData = {
   cvUrl: '/img/CV GASTÓN FERRARI.pdf',
 }
 
-export const aboutData = {
-  description: [
-    "Técnico Superior en Desarrollo de Software con una trayectoria integral que vincula la innovación tecnológica y la educación técnica de alto impacto. Mi enfoque profesional se especializa en el desarrollo de soluciones Full Stack escalables y seguras, sustentadas en una sólida competencia técnica en arquitecturas modernas como React, Next.js y Node.js, complementada con una especialización estratégica en ciberseguridad y delitos informáticos.",
-    "Como docente en los niveles medio, técnico y superior, poseo una capacidad probada para transformar conceptos técnicos complejos en estrategias de aprendizaje efectivas, liderando la formación de nuevos profesionales en programación, redes y sistemas. Mi misión es converger la excelencia técnica con la formación académica para liderar proyectos tecnológicos que impulsen la transformación digital con propósito.",
-  ],
-  services: [
-    {
-      icon: 'Code',
-      title: 'Desarrollo de Software a medida',
-      description: 'Creación de soluciones web y de escritorio robustas y escalables, utilizando un stack moderno (React, Next.js, Node.js) y arquitecturas de bases de datos optimizadas.',
-    },
-    {
-      icon: 'Smartphone',
-      title: 'Desarrollo de Aplicaciones Móviles',
-      description: 'Diseño y construcción de experiencias móviles intuitivas y de alto rendimiento, enfocadas en la usabilidad y la integración fluida con servicios en la nube.',
-    },
-    {
-      icon: 'Zap',
-      title: 'Docencia Técnica Especializada',
-      description: 'Formación académica en niveles medio, técnico y superior, liderando el aprendizaje en áreas clave como programación, redes y seguridad informática.',
-    },
-  ],
-}
 
 export const resumeData = {
   education: [
@@ -123,7 +100,7 @@ export const portfolioData = {
       title: 'Arbitra',
       category: 'web app',
       image: '/img/arbitra.png',
-      description: 'Financial tool for arbitrage calculation.',
+      description: 'Plataforma avanzada de arbitraje financiero que optimiza la toma de decisiones mediante el análisis de datos en tiempo real.',
       tech: ['React', 'Node.js', 'API Integration'],
       liveUrl: 'https://arbitra-sigma.vercel.app/',
       githubUrl: '#',
@@ -132,7 +109,7 @@ export const portfolioData = {
       title: 'Presupuestos Don Santiago',
       category: 'web app',
       image: '/img/donsantiago.jpg',
-      description: 'Budgeting management system for local business.',
+      description: 'Sistema integral de gestión comercial y presupuestaria diseñado para digitalizar y optimizar procesos de ventas locales.',
       tech: ['Web', 'Database', 'Management'],
       liveUrl: '#',
       githubUrl: '#',
@@ -141,7 +118,7 @@ export const portfolioData = {
       title: 'Luxury Salon',
       category: 'design',
       image: '/img/Luxurysalon.png',
-      description: 'Plataforma web para gestión de servicios de belleza.',
+      description: 'Experiencia digital premium para la gestión de servicios de estética, con un enfoque en la conversión y el branding exclusivo.',
       tech: ['React', 'Next.js', 'Tailwind'],
       liveUrl: 'https://luxury-salon.vercel.app/',
       githubUrl: '#',
@@ -150,7 +127,7 @@ export const portfolioData = {
       title: 'PeluTurno',
       category: 'web app',
       image: '/img/PeluTurno.png',
-      description: 'Sistema de gestión de turnos para peluquerías.',
+      description: 'Solución eficiente de agendamiento y gestión de turnos que mejora la experiencia del cliente y la organización operativa.',
       tech: ['React', 'Next.js', 'Vercel'],
       liveUrl: 'https://peluturno.vercel.app/home',
       githubUrl: '#',
@@ -159,7 +136,7 @@ export const portfolioData = {
       title: 'IA Optimizer Token',
       category: 'web app',
       image: '/img/IAOptimizerToken.png',
-      description: 'Optimization and token management platform.',
+      description: 'Solución inteligente diseñada para la optimización estratégica y gestión eficiente de tokens dentro de ecosistemas Web3.',
       tech: ['React', 'Next.js', 'Web3'],
       liveUrl: '#',
       githubUrl: '#',

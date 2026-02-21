@@ -4,61 +4,62 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Improved light theme with softer colors and better contrast */
-  --background: oklch(0.99 0 0);
-  --foreground: oklch(0.15 0 0);
-  --card: oklch(0.98 0.005 240);
-  --card-foreground: oklch(0.15 0 0);
+  --background: oklch(0.98 0.005 264);
+  --foreground: oklch(0.12 0.01 264);
+  --card: oklch(0.99 0 0);
+  --card-foreground: oklch(0.12 0.01 264);
   --popover: oklch(0.99 0 0);
-  --popover-foreground: oklch(0.15 0 0);
-  --primary: oklch(0.15 0 0);
+  --popover-foreground: oklch(0.12 0.01 264);
+  --primary: hsl(220, 95%, 55%);
   --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.96 0.01 240);
-  --secondary-foreground: oklch(0.15 0 0);
-  --muted: oklch(0.55 0 0);
-  --muted-foreground: oklch(0.45 0.01 240);
-  --accent: oklch(0.55 0.22 240);
+  --secondary: oklch(0.94 0.01 264);
+  --secondary-foreground: oklch(0.12 0.01 264);
+  --muted: oklch(0.45 0.01 264);
+  --muted-foreground: oklch(0.35 0.02 264);
+  --accent: hsl(195, 95%, 50%);
   --accent-foreground: oklch(0.99 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.9 0.01 240);
-  --input: oklch(0.9 0.01 240);
-  --ring: oklch(0.55 0.22 240);
-  --chart-1: oklch(0.4 0 0);
-  --chart-2: oklch(0.5 0 0);
-  --chart-3: oklch(0.6 0 0);
-  --chart-4: oklch(0.7 0 0);
-  --chart-5: oklch(0.8 0 0);
-  --radius: 0.75rem;
+  --border: oklch(0.88 0.02 264);
+  --input: oklch(0.88 0.02 264);
+  --ring: hsl(220, 95%, 55%);
+  --radius: 1.25rem;
+
+  /* Senior Precision Extra Tokens - Light Mode Polish */
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(0, 0, 0, 0.08);
 }
 
 .dark {
-  /* Updated accent color to blue instead of yellow */
   --background: oklch(0.12 0.01 264);
-  --foreground: oklch(0.95 0 0);
+  --foreground: oklch(0.98 0.005 240);
   --card: oklch(0.15 0.01 264);
-  --card-foreground: oklch(0.95 0 0);
+  --card-foreground: oklch(0.98 0.005 240);
   --popover: oklch(0.15 0.01 264);
-  --popover-foreground: oklch(0.95 0 0);
-  --primary: oklch(0.95 0 0);
-  --primary-foreground: oklch(0.12 0.01 264);
+  --popover-foreground: oklch(0.98 0.005 240);
+  --primary: hsl(220, 95%, 60%);
+  --primary-foreground: oklch(0.98 0 0);
   --secondary: oklch(0.2 0.01 264);
-  --secondary-foreground: oklch(0.95 0 0);
+  --secondary-foreground: oklch(0.98 0.005 240);
   --muted: oklch(0.4 0 0);
   --muted-foreground: oklch(0.6 0 0);
-  --accent: oklch(0.65 0.2 240);
-  --accent-foreground: oklch(0.95 0 0);
+  --accent: hsl(190, 90%, 50%);
+  --accent-foreground: oklch(0.98 0.005 240);
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.22 0.01 264);
   --input: oklch(0.22 0.01 264);
-  --ring: oklch(0.65 0.2 240);
-  --chart-5: oklch(0.9 0 0);
+  --ring: hsl(190, 90%, 50%);
+
+  /* Senior Precision Extra Tokens */
+  --glass-bg: rgba(15, 23, 42, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 @theme inline {
-  --font-sans: 'Geist', 'Geist Fallback';
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-sans: var(--font-inter), 'Inter', sans-serif;
+  --font-display: var(--font-outfit), 'Outfit', sans-serif;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -78,15 +79,13 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 4px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 16px);
 }
 
 @layer base {
@@ -95,12 +94,47 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans selection:bg-primary/30 selection:text-foreground;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display tracking-tight font-bold;
   }
 }
 
-/* Added scrollbar hiding utility for mobile navigation */
 @layer utilities {
+  .glass-effect {
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+
+  .glass-card {
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
+  }
+
+  .text-gradient {
+    background-image: linear-gradient(to right, var(--primary), var(--accent), var(--primary));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient 5s ease infinite;
+  }
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -109,25 +143,18 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
-}
 
-/* Updated profile picture border animation to subtle shining effect */
-@keyframes pulse-slow {
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
 
-  0%,
-  100% {
-    opacity: 0.3;
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
   }
-
-  50% {
-    opacity: 0.8;
-  }
-}
-
-.animate-pulse-slow {
-  animation: pulse-slow 3s ease-in-out infinite;
-}
-
-.animate-pulse-slow {
-  animation: pulse-slow 3s ease-in-out infinite;
 }
