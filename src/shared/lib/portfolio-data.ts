@@ -31,9 +31,19 @@ export const resumeData = {
       description: 'Técnico Superior en Desarrollo de Software.',
     },
     {
-      title: 'FASTA',
-      period: '2022 — 2024',
-      description: 'Formación Pedagógica para profesionales técnicos.',
+      title: 'Universidad FASTA',
+      period: '2021 — 2023',
+      description: 'Tramo de Formación Pedagógica Para Profesionales y Técnicos Superiores.',
+    },
+    {
+      title: 'Universidad FASTA',
+      period: '2022 — 2023',
+      description: 'Tramo de Formación Pedagógica del Nivel Medio Para Técnicos.',
+    },
+    {
+      title: 'ITBA',
+      period: '2025 — 2025',
+      description: 'Inteligencia artificial aplicada: Proyectos con Machine Learning.',
     },
   ],
   experience: [
