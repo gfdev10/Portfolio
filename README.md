@@ -1,4 +1,4 @@
-# 🚀 Gastón Ferrari - Portfolio Profesional
+# Gastón Ferrari - Portfolio Profesional
 
 ![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)
@@ -7,7 +7,7 @@
 
 Bienvenido al repositorio de mi portfolio profesional. Este proyecto ha sido desarrollado siguiendo principios de **Clean Architecture** para garantizar escalabilidad, mantenibilidad y una clara separación de responsabilidades, al mismo tiempo que ofrece un diseño moderno mediante el uso de Glassmorphism y animaciones fluidas.
 
-## 💻 Tecnologías Principales
+##  Tecnologías Principales
 
 - **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
 - **Lenguaje**: [TypeScript](https://www.typescriptlang.org/)
@@ -17,7 +17,7 @@ Bienvenido al repositorio de mi portfolio profesional. Este proyecto ha sido des
 - **Componentes UI**: [Radix UI](https://www.radix-ui.com/)
 - **Formularios**: [Web3Forms](https://web3forms.com/) para el manejo de contactos.
 
-## 🏗️ Arquitectura del Proyecto
+## Arquitectura del Proyecto
 
 El código se organiza siguiendo una estructura modular dentro de la carpeta `src/`, optimizada para el crecimiento futuro:
 
@@ -30,13 +30,13 @@ src/
 └── styles/         # Estilos globales y tokens de diseño personalizados
 ```
 
-### ✨ Características Destacadas
+### Características Destacadas
 - **Diseño Moderno**: Implementación moderna con efectos *Glassmorphism* limpios y estéticos.
 - **Tipado Estricto**: Uso extensivo de TypeScript para prevenir errores en tiempo de desarrollo.
 - **Rendimiento**: Optimización avanzada mediante Server Components y carga diferida.
 - **SEO**: Meta etiquetas y arquitectura optimizada para buscadores.
 
-## 🛠️ Configuración Local
+## Configuración Local
 
 1. **Clonar el repositorio**:
    ```bash
@@ -67,9 +67,9 @@ src/
    npm start
    ```
 
-## 📩 Contacto
+## Contacto
 
-Si tienes alguna pregunta, propuesta de proyecto o interés profesional, no dudes en contactarme directamente a través de mi portfolio o vía [LinkedIn](https://www.linkedin.com/in/gaston-ferrari-b01119192/).
+Si tienes alguna pregunta, propuesta de proyecto o interés profesional, no dudes en contactarme directamente a través de mi portfolio o vía [LinkedIn](www.linkedin.com/in/gastonferrari98).
 
 ---
 Desarrollado con pasión y excelencia por **Gastón Ferrari**.
