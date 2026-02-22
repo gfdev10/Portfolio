@@ -104,7 +104,7 @@ export function SkillsSection() {
             {/* Specialized Areas */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
-                    { label: 'DevOps', icon: GitBranch, tags: ['Docker', 'CI/CD', 'Git', 'Vercel'] },
+                    { label: 'DevOps', icon: GitBranch, tags: ['Docker', 'CI/CD', 'Azure', 'Git'] },
                     { label: 'IA', icon: Brain, tags: ['Prompt Engineering', 'Python'] },
                 ].map((area, i) => (
                     <motion.div
