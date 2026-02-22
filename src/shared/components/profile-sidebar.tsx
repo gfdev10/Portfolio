@@ -35,7 +35,7 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
         <h1 className="text-xl md:text-2xl font-display font-bold text-foreground mb-1 text-center">
           {data.name}
         </h1>
-        <p className="text-xs md:text-sm text-muted-foreground bg-primary/10 text-primary border border-primary/20 px-3 md:px-4 py-1 rounded-full font-medium">
+        <p className="text-[10px] md:text-xs text-black dark:text-white bg-primary/10 border border-primary/20 px-4 py-1.5 rounded-full font-semibold tracking-wide text-center mt-2 leading-relaxed">
           {data.title}
         </p>
       </div>

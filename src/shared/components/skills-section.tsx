@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { resumeData } from '@/shared/lib/portfolio-data'
-import { Cpu, Globe, Database, Shield, Zap, Layout, Code2, Layers } from 'lucide-react'
+import { Cpu, Globe, Database, Shield, Zap, Layout, Code2, Cloud, GitBranch, Brain } from 'lucide-react'
 
 export function SkillsSection() {
     const { skills } = resumeData
@@ -53,7 +53,10 @@ export function SkillsSection() {
             >
                 <h2 className="text-3xl md:text-5xl font-display font-black text-foreground mb-4">Tecnologías</h2>
                 <p className="text-muted-foreground max-w-2xl text-lg italic">
-                    Instrumentación técnica de vanguardia para arquitecturas <span className="text-primary font-bold">escalables y seguras.</span>
+                    Diseño e implementación de arquitecturas modernas orientadas a la
+                    <span className="text-primary font-bold"> escalabilidad</span>,
+                    <span className="text-primary font-bold"> seguridad</span> y
+                    <span className="text-primary font-bold"> alta disponibilidad</span>.
                 </p>
                 <div className="w-20 h-1.5 bg-primary rounded-full mt-8" />
             </motion.div>
@@ -99,29 +102,38 @@ export function SkillsSection() {
             </motion.div>
 
             {/* Specialized Areas */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
-                    { label: 'Blockchain', icon: Layers, desc: 'Web3 & Tokens' },
-                    { label: 'Cybersecurity', icon: Shield, desc: 'Digital Forensics' },
-                    { label: 'Cloud', icon: Zap, desc: 'AWS & Vercel' }
+                    { label: 'DevOps', icon: GitBranch, tags: ['Docker', 'CI/CD', 'Git', 'Vercel'] },
+                    { label: 'IA', icon: Brain, tags: ['Prompt Engineering', 'Python'] },
                 ].map((area, i) => (
                     <motion.div
                         key={i}
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ delay: i * 0.1 }}
-                        className="px-6 py-4 glass-effect rounded-2xl flex items-center gap-4 group hover:bg-white/5 transition-all"
+                        className="px-6 py-5 glass-effect rounded-2xl flex flex-col gap-3 group hover:bg-white/5 transition-all"
                     >
-                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                            <area.icon className="w-5 h-5" />
+                        <div className="flex items-center gap-3">
+                            <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                                <area.icon className="w-4 h-4" />
+                            </div>
+                            <p className="text-sm font-bold text-foreground">{area.label}</p>
                         </div>
-                        <div>
-                            <p className="text-xs font-bold text-foreground">{area.label}</p>
-                            <p className="text-[10px] text-muted-foreground uppercase tracking-widest">{area.desc}</p>
+                        <div className="flex flex-wrap gap-2">
+                            {area.tags.map((tag, j) => (
+                                <span
+                                    key={j}
+                                    className="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20"
+                                >
+                                    {tag}
+                                </span>
+                            ))}
                         </div>
                     </motion.div>
                 ))}
             </div>
+
         </div>
     )
 }

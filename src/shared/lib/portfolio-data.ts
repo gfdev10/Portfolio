@@ -91,15 +91,12 @@ export const resumeData = {
     },
   ],
   skills: [
-    { name: 'HTML / CSS', level: 95 },
-    { name: 'SQL/MySql', level: 85 },
-    { name: 'JavaScript / React', level: 85 },
-    { name: 'TypeScript / Next.js', level: 85 },
-    { name: 'Node.js / Express', level: 85 },
-    { name: 'git', level: 80 },
-    { name: 'Python', level: 80 },
-    { name: 'C# / .NET', level: 75 },
-    { name: 'Seguridad Informática', level: 70 },
+    { name: 'HTML / CSS Tailwind' },
+    { name: 'JavaScript / React' },
+    { name: 'TypeScript / Next.js' },
+    { name: 'SQL/MySql' },
+    { name: 'PostgreSQL' },
+    { name: 'Node.js / Express' },
   ],
 }
 
