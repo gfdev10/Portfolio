@@ -101,7 +101,7 @@ export const resumeData = {
 }
 
 export const portfolioData = {
-  categories: ['all', 'web app', 'applications', 'design'],
+  categories: ['all', 'web app', 'applications', 'design', 'proyecto'],
   projects: [
     {
       title: 'Arbitra',
@@ -141,7 +141,7 @@ export const portfolioData = {
     },
     {
       title: 'IA Optimizer Token',
-      category: 'web app',
+      category: 'proyecto',
       image: '/img/IAOptimizerToken.png',
       description: 'Solución inteligente diseñada para la optimización estratégica y gestión eficiente de tokens dentro de ecosistemas Web3.',
       tech: ['React', 'Next.js', 'Web3'],
