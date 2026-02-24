@@ -44,7 +44,8 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
       <div className="h-px bg-border/50 my-6 md:my-8" />
 
       {/* Contact Info */}
-      <div className="grid grid-cols-1 gap-4 md:gap-5">
+      <div className="flex flex-col gap-3 md:gap-5">
+
         {[
           { icon: Mail, label: 'Correo', value: data.email, href: `mailto:${data.email}`, isBreak: true },
           { icon: Phone, label: 'Teléfono', value: data.phone, href: `tel:${data.phone.replace(/\s/g, '')}` },
@@ -60,26 +61,28 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
             <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-300">
               <item.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
             </div>
-            <div className="flex-1 min-w-0">
+            <div className="flex-1 min-w-0 overflow-hidden">
               <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold mb-0.5">{item.label}</p>
               {item.href ? (
                 <a
                   href={item.href}
-                  className={`text-sm text-foreground hover:text-primary transition-colors ${item.isBreak ? 'break-all' : 'truncate'} block font-medium`}
+                  className={`text-xs md:text-sm text-foreground hover:text-primary transition-colors ${item.isBreak ? 'break-all' : 'truncate'} block font-medium`}
                 >
                   {item.value}
                 </a>
               ) : (
-                <p className="text-sm text-foreground font-medium">{item.value}</p>
+                <p className="text-xs md:text-sm text-foreground font-medium truncate">{item.value}</p>
               )}
             </div>
+
           </motion.div>
         ))}
 
         {/* Social Links */}
-        <div className="h-px bg-border/50 my-2" />
+        <div className="h-px bg-border/50 my-2 md:my-3" />
 
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-2 md:gap-3 justify-center md:justify-start">
+
           {[
             { icon: Linkedin, href: data.linkedin, color: 'hover:text-blue-500' },
             { icon: Github, href: (data as any).github, color: 'hover:text-white' },
@@ -88,14 +91,16 @@ export function ProfileSidebar({ data = profileData }: ProfileSidebarProps) {
             <motion.a
               key={i}
               whileHover={{ y: -3 }}
+              whileTap={{ scale: 0.95 }}
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`h-10 rounded-xl glass-effect flex items-center justify-center text-muted-foreground ${social.color} transition-all duration-300 ${social.label ? 'px-4 gap-2' : 'w-10'}`}
+              className={`h-9 md:h-10 rounded-xl glass-effect flex items-center justify-center text-muted-foreground ${social.color} transition-all duration-300 ${social.label ? 'px-3 md:px-4 gap-1.5 md:gap-2' : 'w-9 md:w-10'}`}
             >
-              <social.icon className="w-5 h-5" />
-              {social.label && <span className="text-[10px] font-bold uppercase tracking-widest">{social.label}</span>}
+              <social.icon className="w-4 h-4 md:w-5 md:h-5" />
+              {social.label && <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest">{social.label}</span>}
             </motion.a>
+
           ))}
         </div>
       </div>

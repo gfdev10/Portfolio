@@ -29,7 +29,8 @@ export default function Home() {
   ]
 
   return (
-    <div className="min-h-screen bg-background p-3 sm:p-4 md:p-6 lg:p-12 relative overflow-hidden">
+    <div className="min-h-screen bg-background p-3 sm:p-4 md:p-6 lg:p-12 relative overflow-hidden overflow-x-hidden">
+
       {/* Dynamic Background */}
       <div className="fixed inset-0 -z-20">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-full animate-pulse-slow" />
@@ -45,7 +46,8 @@ export default function Home() {
           <ProfileSidebar data={profileData} />
 
           {/* Main Content Area */}
-          <main className="flex-1 flex flex-col gap-6 overflow-hidden">
+          <main className="flex-1 flex flex-col gap-6 overflow-hidden min-w-0">
+
             {/* Navigation Bar */}
             <nav className="glass-card p-2 md:p-3 overflow-x-auto scrollbar-hide">
               <div className="flex gap-2">
@@ -72,7 +74,8 @@ export default function Home() {
             </nav>
 
             {/* Content Switcher */}
-            <div className="glass-card p-4 sm:p-6 md:p-10 min-h-[600px] relative">
+            <div className="glass-card p-4 sm:p-6 md:p-10 min-h-[400px] sm:min-h-[500px] md:min-h-[600px] relative overflow-hidden">
+
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeSection}
