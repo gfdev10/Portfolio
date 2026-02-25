@@ -84,7 +84,7 @@ export const resumeData = {
         'Matarias dictadas en educación tecnológica 1 y educación tecnológica 2.',
     },
     {
-      title: 'CVG - UTN Facultad Regional Rosario - Firmat Carrera Programador universitario',
+      title: 'CVG - UTN Facultad Regional Rosario - Carrera Programador universitario',
       period: '2024 — Presente',
       description:
         'Materias dictadas en Programación 1 , Programación 2 , Programación 3 y Programación 4.',
